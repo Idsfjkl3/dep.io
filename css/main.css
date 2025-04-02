@@ -1,0 +1,358 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background-color: black;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  width: 100%;
+}
+
+button {
+  font-size: 18px;
+  outline: none;
+  border: none;
+  color: black;
+  background-color: transparent;
+  padding: 5px 20px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+button:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#play-menu {
+  position: fixed;
+  top: 36.5%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 25px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 5px 0 #d0d0d0;
+  text-align: center;
+}
+
+#logobox {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+    font-family: 'Roboto';
+  transform: translateY(-50%) translateX(-50%);
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 5px 0 rgba(255, 255, 255, 0);
+  font-size: 80px;
+  color: #FFFFFF;
+  text-shadow: 0 2px 0 #b1b1b1;
+  /* font-weight: bold; */
+  line-height: 80px;
+  text-align: center;
+}
+
+#logobox .game-subtitle {
+  font-size: 14px;
+  
+}
+
+
+#play-menu p {
+  margin-bottom: 0;
+}
+
+#play-menu input {
+  font-size: 18px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+  padding: 3px;
+  text-align: center;
+}
+
+#play-menu input:hover {
+  outline: none;
+}
+
+#play-menu .logo {
+  font-size: 80px;
+  color: #fff;
+  text-shadow: 0 2px 0 #b1b1b1;
+  /* font-weight: bold; */
+  line-height: 80px;
+  text-align: center;
+}
+#ad-menu {
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 145px 185px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 5px 0 #d0d0d0;
+  text-align: center;
+}
+
+#ad-menu p {
+  margin-bottom: 0;
+}
+
+#ad-menu input {
+  font-size: 18px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+  padding: 3px;
+  text-align: center;
+}
+
+#ad-menu input:hover {
+  outline: none;
+}
+
+/* #chat-container {
+   position: fixed; 
+  text-align: center; 
+   bottom: 100px; 
+  margin-bottom: 20px; 
+ } 
+  
+
+#chat-container .message-container input {
+  border: 0;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.211);
+  color: #fff;
+  pointer-events: all;
+}
+
+*/
+#chat-container {
+  border: 2px solid rgba(66, 135, 245,0.5);
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: rgba(0,0,0,0.211);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+  font-size: 23px;
+}
+
+#chat-container input {
+  background-color: rgba(0,0,0,0);
+  color: #FFFFFF;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 3px;
+}
+
+
+#chat-container2 {
+  border: 2px solid rgba(0,0,0,0);
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: rgba(0,0,0,0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+  font-size: 23px;
+}
+
+#chat-enter {
+  padding: 6px 6px;
+  font-family: 'Roboto';
+  background-color: rgba(0,0,0,0.211);
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+}
+
+#name-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 3px;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 5px 0 #ddd;
+  text-align: center;
+  color: #ddd;
+  font-weight: bold;
+  text-align: center;
+  font-size: 23px;
+}
+#play-button {
+  padding: 6px 30px;
+  border-radius: 5px;
+  /* border: 3px solid #f1f1f1; */
+  font-family: 'Roboto';
+  box-shadow: 0 5px 0 #12b300;
+  background-color: #16D400;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+  font-size: 23px;
+}
+#play-button:active {
+  transform: translate(0, 5px);
+  box-shadow: 0 0px 0 #12b300;
+}
+#play-menu input.name {
+  padding: 3px;
+  border-radius: 5px;
+  /* border: 3px solid #f1f1f1; */
+  border: 1px solid #ddd;
+  /* box-shadow: inset 0px 2px 3px #ddd; */
+  background-color: #ddd;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  font-size: 23px;
+}
+
+#name-container p {
+  margin-bottom: 0;
+}
+
+#name-container input {
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 3px;
+  text-align: center;
+}
+
+#name-container input:hover {
+  outline: none;
+}
+
+
+#leaderboard {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  /* background-color: rgba(0, 0, 0, 0.35); */
+  background-image: linear-gradient(rgba(121, 121, 121, 0.35) 40px, rgba(0, 0, 0, 0.35) 40px);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#leaderboard th {
+  font-family: 'Roboto';
+  color: white;
+  text-align: center;
+  padding: 2px 5px;
+}
+
+#leaderboard td {
+  color: white;
+  text-align: center;
+  padding: 2px 5px;
+}
+
+#disconnect-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+#disconnect-modal > div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 15px 20px;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  #play-menu {
+    padding: 10px 15px;
+    min-width: 280px;
+  }
+
+  #disconnect-modal > div {
+    padding: 10px;
+    min-width: 280px;
+  }
+
+  #leaderboard th {
+    padding: 0 3px;
+  }
+
+  #leaderboard td {
+    padding: 0 3px;
+  }
+
+  #leaderboard table {
+    font-size: 14px;
+  }
+}
